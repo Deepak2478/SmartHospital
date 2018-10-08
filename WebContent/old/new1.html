@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+var xmlhttp = new XMLHttpRequest();
+var url = "./webapi/profiles";
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+xmlhttp.onreadystatechange = function() {
+	if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		var myArr = JSON.parse(xmlhttp.responseText);
+		myFunction(myArr);
+	}
+};
+function next(){
+var xmlhttp = new XMLHttpRequest();
+var url = "./demo/textmgmt.html";
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+xmlhttp.onreadystatechange = function() {
+	if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		document.getElementById("id02").innerHTML = xmlhttp.responseText;
+	}
+};
+}
+function myFunction(arr) {
+	var out="";
+	var i;
+	for(i=0;i< arr.length; i++) {
+		out += '<hr>'+'Address: '+ arr[i].address + '<br>' + 
+				'Contact: '+ arr[i].contact + '<br>' +
+				'DOJ: '+ arr[i].dateOfJoining + '<br>' + 
+				'Department: '+ arr[i].department + '<br>' + 
+				'Designation: '+ arr[i].designation + '<br>' + 
+				'EID: '+ arr[i].eid + '<br>' + 
+				'Ename: '+ arr[i].employeeName + '<br>' + '<img src="./profile/'+arr[i].profileUri+'" width=100px%>';
+	}
+	document.getElementById("id01").innerHTML = out;
+	next();
+}
+</script></head>
+<body>
+
+<h2>JSON Object Creation in JavaScript</h2>
+
+<div id="id01">
+</div>
+<hr>
+<div id="id02">
+</div>
+</body>
+</html>

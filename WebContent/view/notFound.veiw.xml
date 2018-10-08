@@ -1,0 +1,10 @@
+<mvc:View
+	controllerName = "workflow.controller.notFound"
+	xmlns="sap.m"
+	xmlns:mvc = "sap.ui.core.mvc">
+	
+	<MessagePane
+		title = "Page not found!"
+		text = "Sorry, but the requested resouce is not available"
+		description = "Please check the URL and try again!" />
+</mvc:View>

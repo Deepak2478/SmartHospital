@@ -1,0 +1,255 @@
+<mvc:View
+	height="100%"
+	controllerName="workflow.controller.patientManagement"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="employeeListPage"
+		class="sapUiResponsiveContentPadding login">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+				<Button press="_back" icon = "sap-icon://nav-back" />
+				</contentLeft>
+				<contentMiddle>
+				<Label text="Centralized Hospital Information Management System - Patient Management" />
+				</contentMiddle>
+				<contentRight>
+				<Button press="_refresh" text="" icon="sap-icon://refresh" />
+				<Button press="_settings" text="" icon="sap-icon://settings" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<IconTabBar
+			id="idIconTabBar"
+			select="handleIconTabBarSelect"
+			class="sapUiResponsiveContentPadding">
+				<items>
+					<IconTabFilter
+						icon="sap-icon://company-view"
+						iconColor="Positive"
+						count="{patNum>/all}"
+						text="All Patients"
+						keys="All" >
+						<Toolbar>
+							<SearchField
+								placeholder="Search by ID"
+								liveChange="onSearchID"
+								width="100%" />
+							<SearchField
+								placeholder="Search by Name"
+								liveChange="onSearchName"
+								width="100%" />
+						</Toolbar>
+						<List id="allPatients" headerText="List of All Patients" items="{
+							path : 'pat>/patients',
+							sorter : { path : 'pat>pid'}
+						}">
+							<items>
+								<ObjectListItem 
+									title="{pat>patientName}"
+									type="Navigation"
+									number="{pat>due}"
+									numberUnit="Rs"
+									showMarkers="true"
+									markFlagged="{pat>flag}"
+									markFavorite="{pat>fav}"
+									markLocked="{pat>lock}"
+									iconInset="true"
+									icon="sap-icon://nurse"
+									press="onListItemPressed"
+									state="{pat>state}">
+									<firstStatus>
+										<ObjectStatus
+											text="{pat>status}"
+											state="{pat>state}" />
+									</firstStatus>
+									<attributes>
+										<ObjectAttribute text="{pat>pid}" />
+										<ObjectAttribute text="{pat>department}" />
+										<ObjectAttribute text="{pat>reason}"/>
+									</attributes>
+								</ObjectListItem>
+							</items>
+						</List>
+					</IconTabFilter>
+					
+					
+					<IconTabSeparator />
+					
+					
+					<IconTabFilter
+						icon="sap-icon://add"
+						iconColor="Positive"
+						text="Add Patient"
+						key="add" >
+						<html:h2 style="color:black;">Add Patient Data</html:h2>
+						<l:VerticalLayout class="whiteBack">
+							<l:content>
+								<Label text="Patient Name" />
+								<Input type="text" placeholder = "Patient Name" id="pname" width="250px" />
+								<Label text="Reason for Admittance" />
+								<Input type="text" placeholder = "Reason..." id="reason" width="250px" />
+								<Label text="Department of Admittance" />
+								<ComboBox 
+									selectionChange = "onDepartmentSelectionChange"
+									items="{
+										path: 'depts>/tileCollection',
+										sorter: { path: 'depts>title' }
+									}" width="250px">
+									<core:Item key="{depts>id_title}" text="{depts>title}" id="combo" value="{depts>title}"/>
+								</ComboBox>
+								<Label text="Initial Charges" />
+								<Input type="Number" placeholder = "Initial Fee..." id="fee" width="250px" />
+								<Button type= "Submit" text="Admit Patient"  press="onAddPatient" width="200px"  />
+							</l:content>
+						</l:VerticalLayout>
+					</IconTabFilter>
+					
+					
+					<!-- <IconTabFilter
+						icon="sap-icon://appointment"
+						iconColor="Positive"
+						text="Admitted on"
+						key="bydate" >
+						
+					</IconTabFilter>-->
+					
+					
+					<IconTabSeparator />
+					
+					
+					<IconTabFilter
+						icon="sap-icon://bed"
+						iconColor="Positive"
+						count="{patNum>/admitted}"
+						text="Admitted"
+						key="admitted" >
+						<List id="admitted" headerText="List of Admitted Patients" items="{
+							path : 'pat>/patients',
+							sorter : { path : 'pat>pid'}
+						}">
+							<items>
+								<ObjectListItem 
+									title="{pat>patientName}"
+									type="Navigation"
+									number="{pat>due}"
+									numberUnit="Rs"
+									showMarkers="true"
+									markFlagged="{pat>flag}"
+									markFavorite="{pat>fav}"
+									markLocked="{pat>lock}"
+									iconInset="true"
+									icon="sap-icon://nurse"
+									press="onListItemPressed">
+									<firstStatus>
+										<ObjectStatus
+											text="{pat>status}"
+											state="{pat>state}" />
+									</firstStatus>
+									<attributes>
+										<ObjectAttribute text="{pat>pid}" />
+										<ObjectAttribute text="{pat>department}" />
+										<ObjectAttribute text="{pat>reason}"/>
+									</attributes>
+								</ObjectListItem>
+							</items>
+						</List>
+					</IconTabFilter>
+					<IconTabFilter
+						icon="sap-icon://suitcase"
+						iconColor="Critical"
+						count="{patNum>/discharged}"
+						text="Discharged"
+						key="discharged" >
+						<List id="discharged" headerText="List of Discharged Patients" items="{
+							path : 'pat>/patients',
+							sorter : { path : 'pat>pid'}
+						}">
+							<items>
+								<ObjectListItem 
+									title="{pat>patientName}"
+									type="Navigation"
+									number="{pat>due}"
+									numberUnit="Rs"
+									showMarkers="true"
+									markFlagged="{pat>flag}"
+									markFavorite="{pat>fav}"
+									markLocked="{pat>lock}"
+									iconInset="true"
+									icon="sap-icon://nurse"
+									press="onListItemPressed">
+									<firstStatus>
+										<ObjectStatus
+											text="{pat>status}"
+											state="{pat>state}" />
+									</firstStatus>
+									<attributes>
+										<ObjectAttribute text="{pat>pid}" />
+										<ObjectAttribute text="{pat>department}" />
+										<ObjectAttribute text="{pat>reason}"/>
+									</attributes>
+								</ObjectListItem>
+							</items>
+						</List>
+					</IconTabFilter>
+					<IconTabFilter
+						icon="sap-icon://loan"
+						iconColor="Negative"
+						count="{patNum>/overdue}"
+						text="Overdue"
+						key="overdue" >
+						<List id="overdue" headerText="List of Patients with Overdue" items="{
+							path : 'pat>/patients',
+							sorter : { path : 'pat>pid'}
+						}">
+							<items>
+								<ObjectListItem 
+									title="{pat>patientName}"
+									type="Navigation"
+									number="{pat>due}"
+									numberUnit="Rs"
+									showMarkers="true"
+									markFlagged="{pat>flag}"
+									markFavorite="{pat>fav}"
+									markLocked="{pat>lock}"
+									iconInset="true"
+									icon="sap-icon://nurse"
+									press="onListItemPressed">
+									<firstStatus>
+										<ObjectStatus
+											text="{pat>status}"
+											state="{pat>state}" />
+									</firstStatus>
+									<attributes>
+										<ObjectAttribute text="{pat>pid}" />
+										<ObjectAttribute text="{pat>department}" />
+										<ObjectAttribute text="{pat>reason}"/>
+									</attributes>
+								</ObjectListItem>
+							</items>
+						</List>
+					</IconTabFilter>
+				</items>
+			<!-- <List id="employeeList" headerText="List of All Patients" items="{/Employees}"> -->
+			
+			</IconTabBar>
+			
+		</content>
+		<footer>
+			<Bar>
+				<contentLeft>
+					<Label text="Copyright &#169; 2016  All rights reserved." width="100%" id="__label0" textAlign="Center"/>
+				</contentLeft>
+				<contentRight>
+					<Button icon="sap-icon://favorite" text="Admitted" enabled="false"/>
+					<Button icon="sap-icon://flag" text="Discharged" enabled="false"/>
+					<Button icon="sap-icon://locked" text="Overdue" enabled="false"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

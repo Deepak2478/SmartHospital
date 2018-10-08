@@ -1,0 +1,17 @@
+<mvc:view 
+	controllerName = "workflow.controller.postData"
+	xmlns="sap.m"
+	xmlns:mvc = "sap.ui.core.mvc">
+	<Button
+		text = "Post Data"
+		press = "sendPostRequest"/>	
+	<Button
+		text = "Put Data"
+		press = "sendPutRequest"/>	
+	<Button
+		text = "Delete Data"
+		press = "sendDeleteRequest"/>	
+	<Button
+		text = "Get Data"
+		press = "sendGetRequest"/>	
+</mvc:view>

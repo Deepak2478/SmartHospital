@@ -1,0 +1,76 @@
+{
+	"TileCollection" : [
+		{
+			"id-title" : "create",
+			"icon" : "add",
+			"number" : "",
+			"title" : "Add",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile1",
+			"icon" : "bed",
+			"number" : "",
+			"title" : "Ward Management",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile2",
+			"icon" : "electrocardiogram",
+			"number" : "",
+			"title" : "ECG",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile3",
+			"icon" : "endoscopy",
+			"number" : "",
+			"title" : "Endoscopy",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile4",
+			"icon" : "nurse",
+			"number" : "",
+			"title" : "Care",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile5",
+			"icon" : "pharmacy",
+			"number" : "",
+			"title" : "Pharmacy",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile6",
+			"icon" : "sonography",
+			"number" : "",
+			"title" : "Sonography",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile7",
+			"icon" : "syringe",
+			"number" : "",
+			"title" : "In-patient Department",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile8",
+			"icon" : "stethoscope",
+			"number" : "",
+			"title" : "Out-patient Department",
+			"info" : "",
+			"infoState" : "Success"
+		}
+	]
+}

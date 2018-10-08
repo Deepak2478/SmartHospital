@@ -1,0 +1,44 @@
+<mvc:View
+	height="100%"
+	controllerName="workflow.controller.department"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<Page
+		enableScrolling="false" class="login">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+				<Button press="_back" icon = "sap-icon://nav-back" />
+				</contentLeft>
+				<contentMiddle>
+				<Label text="Centralized Hospital Information Management System - Departments" />
+				</contentMiddle>
+				<contentRight>
+				<Button press="_refresh" text="" icon="sap-icon://refresh" />
+				<Button press="_settings" text="" icon="sap-icon://settings" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<TileContainer
+			id="container"
+			tileDelete="handleTileDelete"
+			tiles="{/tileCollection}">
+			<StandardTile
+				icon="sap-icon://{icon}"
+				type="{type}"
+				number="{number}"
+				numberUnit="{numberUnit}"
+				title="{title}"
+				info="{info}"
+				infoState="{infoState}"
+				press="onPressTile"/>
+		</TileContainer>
+		<footer>
+            <Bar id="__bar1" enableFlexBox="false" design="Footer">
+				<contentLeft>
+					<Label text="Copyright &#169; 2016  All rights reserved. " width="100%" id="__label0" textAlign="Center"/>
+				</contentLeft>
+            </Bar>
+		</footer>
+	</Page>
+</mvc:View>

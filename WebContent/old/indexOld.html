@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CIMS</title>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <LINK REL="StyleSheet" HREF="css/external.css" TYPE="text/css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <link href="./css/bootstrap.min.css" rel='stylesheet' type='text/css' />
+    <link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <script type="text/javascript">
+	function show_sub(sub){
+		domProp = document.getElementById(sub).style;
+		domProp.display = "inline";
+		domProp.visibility = "visible";
+		}
+	function hide_sub(sub){
+		domProp = document.getElementById(sub).style;
+		domProp.display = "none";
+		domProp.visibility = "hidden";
+		}
+
+	
+</script>
+<style>
+	a:hover { background-color: #A52A2A;}
+</style>
+</head>
+<body bgcolor=#0489B1>
+<header class="header">
+<h1 align="left"><b>&nbsp;&nbsp;CENTRALIZED INFORMATION MANAGEMENT<br/> <span style="padding-left:300px">SYSTEM</span></b></h1>
+</header>
+
+
+<nav class="menus">
+ <button type="button" class="btn btn-primary btn-md">Home</button>
+&nbsp;
+<button type="button" class="btn btn-primary btn-md dropdown-toggle" data-toggle="dropdown">
+    Services <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="profile.html">Employee Management</a></li>
+      <li><a href="#">Bulletin Management</a></li>
+	<li><a href="#">Text Management</a></li>
+	<li><a href="#">Conference Management</a></li>
+    </ul>
+<!--<a href="MyAboutPage.html" style="color: white;" onmouseover="show_sub('sub1');" onmouseout="hide_sub('sub1')">Services<ul style="visibility: visible; z-index: 10; position: absolute; display: none; background-color: black;" id="sub1">
+			<li><a href="">File Management</a></li>
+			<li><a href="">Conference Management</a></li>
+			<li><a href="">Bulletin Management</a></li>
+			<li><a href="">Employee Information Management</a></li>
+			<li><a href="">Text message management</a></li>
+		</ul></a>-->
+&nbsp;
+<button type="button" class="btn btn-primary">Locations</button>
+&nbsp;
+<button type="button" class="btn btn-primary">Departments</button>
+<!--<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+    Departments <span class="caret"></span></button>
+    <ul class="dropdown-menu" role="menu">
+      <li><a href="#">A</a></li>
+      <li><a href="#">B</a></li>
+	<li><a href="#">C</a></li>
+	<li><a href="#">D</a></li>
+    </ul>-->
+&nbsp;
+<button type="button" class="btn btn-primary">News</button>
+&nbsp;
+<button type="button" class="btn btn-primary">About Us</button>
+</nav>
+<section>
+<div class="logo"><img src="./profile/logo.jpg" alt="LOGO" width=100px height=100px/></div>
+<div class="signup"><b>Customer Access:</b><br/>
+<form action = "./logtheme.html?#demo2">
+<input type="submit" value="LOG IN"><br/>
+<a href="./logtheme.html" style="color: white;">New user? SignUP</a>
+</div>
+<div class="first">Something goes here </div>
+<div class="second">Government Information Management System</div>
+<div class="third">Contact us</div>
+</section>
+<footer>
+<div class="fourth"><u>About us</u></div>
+<div class="fifth"><u>Departments</u></div>
+</footer>
+
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,111 @@
+<mvc:View
+	height="100%"
+	controllerName="workflow.controller.textManagement"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+	<Page
+		class="sapUiResponsiveContentPadding login">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+				<Button press="_back" icon = "sap-icon://nav-back" />
+				</contentLeft>
+				<contentMiddle>
+				<Label text="Centralized Hospital Information Management System - Text Message Management" />
+				</contentMiddle>
+				<contentRight>
+				<Button press="_refresh" text="" icon="sap-icon://refresh" />
+				<Button press="_settings" text="" icon="sap-icon://settings" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+		<SplitContainer id="MessageSplit" initialDetail="detail" initialMaster="master">
+			<detailPages>
+				<Page id="detail" title = "Conversation" class ="sapUiStdPage" showNavButton="true" navButtonPress="goToMaster">
+				<content>
+					<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:content>
+							<!-- <FeedInput
+								post="onPost"
+								icon="sap-icon://doctor"
+								class="sapUiSmallMarginTopBottom" />-->
+							<List headerText="Text Conversation" items="{ path : 'currentMessage>/messages'}">
+								<FeedListItem
+									sender="{currentMessage>sender}"
+									icon="sap-icon://nurse"
+									senderPress="onSenderPress"
+									iconPress = "onSenderPress"
+									iconDensityAware="true"
+									info="{currentMessage>messageSubject}"
+									timestamp = "{currentMessage>date}"
+									text="{currentMessage>message}"/>
+							</List>
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+				</Page>
+				<!-- <List items="{path: 'hello>/hero'}">
+				<items>
+				<Page id="{hello>sup}"  title = "Conversation" class ="sapUiStdPage">
+				<content>
+					<l:VerticalLayout class="sapUiContentPadding" width="100%">
+						<l:content>
+							<FeedInput
+								post="onPost"
+								icon="sap-icon://doctor"
+								class="sapUiSmallMarginTopBottom" />
+							<List headerText="Text Conversation">
+								<FeedListItem
+									sender="Krishna"
+									icon="sap-icon://nurse"
+									senderPress="onSenderPress"
+									iconPress = "onSenderPress"
+									iconDensityAware="true"
+									info="Hello World"
+									timestamp = "Date"
+									text="Hello World"/>
+							</List>
+						</l:content>
+					</l:VerticalLayout>
+				</content>
+				</Page>
+				</items>
+				</List>-->
+ 			</detailPages>
+ 			<masterPages>
+ 				<Page id="master" icon="sap-icon://action" class="sapUiStdPage">
+	 				<customHeader>
+						<Bar>
+							<contentMiddle>
+								<Label text="Recent Messages" />
+							</contentMiddle>
+							<contentRight>
+								<Button press="onOpenAddMessageDialog" text="" icon="sap-icon://add" />
+							</contentRight>
+						</Bar>
+					</customHeader>
+ 					<content>
+ 						<List items="{ path : 'message>/messages',
+ 										sorter : { path : 'message>messageId',
+ 													descending : 'true'}}" itemPress="navigateToMessage">
+ 							<items>
+ 								<StandardListItem title="{message>sender}" custom:to="{message>messageId}" type="Active" info="{message>receiver}" description="{message>messageId}" press="changeLayout"/> 								
+ 							</items>
+ 						</List>
+ 					</content>
+ 				</Page>
+ 			</masterPages>
+ 			</SplitContainer>
+		</content>
+		<footer>
+			<Bar>
+				<contentLeft>
+					<Label text="Copyright &#169; 2016  All rights reserved." width="100%" id="__label0" textAlign="Center"/>
+				</contentLeft>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

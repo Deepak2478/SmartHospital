@@ -1,0 +1,28 @@
+{
+	"TileCollection" : [
+		{
+			"id-title" : "tile2",
+			"icon" : "task",
+			"number" : "",
+			"title" : "Bulletins",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile3",
+			"icon" : "manager",
+			"number" : "",
+			"title" : "Upcoming Meetings",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile5",
+			"icon" : "addresses",
+			"number" : "",
+			"title" : "Department",
+			"info" : "",
+			"infoState" : "Success"
+		}
+	]
+}

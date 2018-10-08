@@ -1,0 +1,39 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Dialog
+		title = "Meeting Participants">
+		<l:VerticalLayout
+			class="sapUiContentPadding"
+			width="100%">
+			<l:content>
+				<Table id="participants"
+					inset = "false"
+					items="{path : 'participants>/participents',
+							sorter : {path : 'participants>username'}}">
+					<columns>
+						<Column width="70%" hAlign="Center">
+							<Text text="Users"/>
+						</Column>
+						<Column hAlign="Center">
+							<Text text="Will Attend?"/>
+						</Column>
+					</columns>
+					<ColumnListItem type="Inactive">
+						<cells>
+							<ObjectIdentifier title="{participants>username}"/>
+							<ToggleButton icon="sap-icon://accept" pressed="{participants>willAttend}" enabled="false"/>
+						</cells>
+					</ColumnListItem>
+				</Table>
+			</l:content>
+		</l:VerticalLayout>
+		<beginButton>
+	         <Button
+	         	type="Submit"
+	            text="Close"
+	            press="onCloseOpenMeetingDialog"/>
+      	</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

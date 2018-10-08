@@ -1,0 +1,58 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Dialog
+		title = "Add New User">
+		<l:VerticalLayout
+			class="sapUiContentPadding"
+			width="100%">
+			<l:content>
+				<Label text="Username" />
+				<Input
+					type="text"
+					placeholder="Enter Username..." id = "username" required = ""/>
+				<Label text="Password" />
+				<Input
+					type="Password"
+					placeholder="Enter Password..." id="password" required=""/>
+				<Label text="Confirm Password" />
+				<Input
+					type="Password"
+					placeholder="Confirm Password..." id="confirm" required=""/>
+				<Label text="Employee ID" />
+				<Input
+					type="text"
+					placeholder="Enter Employee ID..." id= "eid" required=""/>
+				<Label text="Personal Icon:" />
+				<Toolbar>
+					<ToggleButton icon="sap-icon://cloud" press="fna" id="icon1"/>
+					<ToggleButton icon="sap-icon://competitor" press="fnb" id="icon2"/>
+					<ToggleButton icon="sap-icon://explorer" press="fnc" id="icon3"/>
+				</Toolbar>
+				<Toolbar>
+					<ToggleButton icon="sap-icon://nutrition-activity" press="fnd" id="icon4"/>
+					<ToggleButton icon="sap-icon://puzzle" press="fne" id="icon5"/>
+					<ToggleButton icon="sap-icon://soccor" press="fnf" id="icon6"/>
+				</Toolbar>
+				<Toolbar>
+					<ToggleButton icon="sap-icon://taxi" press="fng" id="icon7"/>
+					<ToggleButton icon="sap-icon://decision" press="fnh" id="icon8"/>
+					<ToggleButton icon="sap-icon://unlocked" press="fni" id="icon9"/>
+				</Toolbar>
+			</l:content>
+		</l:VerticalLayout>
+		<beginButton>
+	         <Button
+	         	type="Submit"
+	            text="Create"
+	            press="onAddUserSubmit"/>
+      	</beginButton>
+      	<endButton>
+      		<Button
+      			text="Cancel"
+      			press = "onCloseAddUserDialog"/>
+      	</endButton>
+	</Dialog>
+
+</core:FragmentDefinition>

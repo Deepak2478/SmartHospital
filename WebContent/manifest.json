@@ -1,0 +1,174 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "workflow",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"resources": "resources.json",
+		"ach": "ach",
+		"sourceTemplate": {
+			"id": "ui5template.basicSAPUI5ApplicationProject",
+			"version": "1.32.0"
+		}
+	},
+
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_bluecrystal"
+		]
+	},
+
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": {
+			"viewName": "workflow.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"config": {
+				"sample": {
+					"stretch": true,
+					"files": ["ObjectPageHeaderContentPriorities.view.xml"]
+				}
+			} ,
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "workflow.i18n.i18n"
+				}
+			}
+		},
+	"routing": {
+	  "config": {
+		"routerClass": "sap.m.routing.Router",
+		"viewType": "XML",
+		"viewPath": "workflow.view",
+		"controlId": "app",
+		"controlAggregation": "pages"		
+	  },
+	  "routes": [
+		{
+		  "pattern": "",
+		  "name": "home",
+		  "target": "home"
+		},
+		{
+		  "pattern": "login",
+		  "name": "login",
+		  "target": "login"
+		},
+		{
+		  "pattern": "dashboards",
+		  "name": "dashboard",
+		  "target": "dashboard"
+		},
+		{
+		  "pattern": "patientManagement",
+		  "name": "patientManagement",
+		  "target": "patientManagement"
+		},
+		{
+		  "pattern": "bulletin",
+		  "name": "bulletin",
+		  "target": "bulletin"
+		},
+		{
+		  "pattern": "meeting",
+		  "name": "meeting",
+		  "target": "meeting"
+		},
+		{
+		  "pattern": "textManagement",
+		  "name": "textManagement",
+		  "target": "textManagement"
+		},
+		{
+		  "pattern": "department",
+		  "name": "department",
+		  "target": "department"
+		},
+		{
+		  "pattern": "postData",
+		  "name": "postData",
+		  "target": "postData"
+		}
+	  ],
+	  "targets": {
+		"login": {
+		  "viewName": "login",
+		  "viewLevel" : 1
+		},
+		"home" : {
+			"viewName": "home",
+			"viewLevel" : 1
+		},
+		"dashboard": {
+		  "viewName": "dashboard",
+		  "viewLevel" : 2
+		},
+		"patientManagement": {
+		  "viewName": "patientManagement",
+		  "viewLevel" : 3
+		},
+		"bulletin": {
+		  "viewName": "bulletin",
+		  "viewLevel" : 3
+		},
+		"meeting": {
+		  "viewName": "meeting",
+		  "viewLevel" : 3
+		},
+		"textManagement": {
+		  "viewName": "textManagement",
+		  "viewLevel" : 3
+		},
+		"department": {
+		  "viewName": "department",
+		  "viewLevel" : 4
+		},
+		"postData" : {
+		  "viewName" : "postData"
+		}
+	  }
+	},
+		"resources": {
+			"css": [{
+				"uri": "css/style.css"
+			}]
+		}
+	}
+}

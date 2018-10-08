@@ -1,0 +1,68 @@
+<mvc:View
+	height="100%"
+	controllerName="workflow.controller.bulletin"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		class="sapUiResponsiveContentPadding login">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+				<Button press="_back" icon = "sap-icon://nav-back" />
+				</contentLeft>
+				<contentMiddle>
+				<Label text="Centralized Hospital Information Management System - Bulletin Management" />
+				</contentMiddle>
+				<contentRight>
+				<Button press="_refresh" text="" icon="sap-icon://refresh" />
+				<Button press="_settings" text="" icon="sap-icon://settings" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<Toolbar>
+				<Button icon="sap-icon://add" press="onOpenAddNoticeDialog" id="addButtonBulletin"/>
+				<SearchField liveChange="onSearch" width="100%" />
+			</Toolbar>
+			<List id="allBulletins" headerText="List of Bulletins" items="{ path : 'bulletin>/bulletins', 
+													sorter : { path : 'bulletin>date',
+ 													descending : 'true'}}">
+				<items>
+					<ObjectListItem 
+						title="{bulletin>title}"
+						intro="{bulletin>bulletinId}"
+						type="Navigation"
+						number="{bulletin>department}"
+						numberUnit = "~ {bulletin>poster}"
+						showMarkers="true"
+						markFlagged="{bulletin>generic}"
+						markFavorite="{bulletin>specific}"
+						markLocked="{bulletin>conf}"
+						iconInset="true"
+						icon="{bulletin>iconPath}"
+						press="onListItemPressed">
+						<attributes>
+							<ObjectAttribute text="{bulletin>username}"/>
+							<ObjectAttribute text="{bulletin>date}" />
+							<ObjectAttribute text="{bulletin>details}" />
+							<ObjectAttribute text="{bulletin>info}"/>
+						</attributes>
+					</ObjectListItem>
+				</items>
+			</List>
+		</content>
+		<footer>
+			<Bar>
+				<contentLeft>
+					<Label text="Copyright &#169; 2016  All rights reserved." width="100%" id="__label0" textAlign="Center"/>
+				</contentLeft>
+				<contentRight>
+					<Button icon="sap-icon://favorite" text="Specific" enabled="false"/>
+					<Button icon="sap-icon://flag" text="Generic" enabled="false"/>
+					<Button icon="sap-icon://locked" text="Confidential" enabled="false"/>
+				</contentRight>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

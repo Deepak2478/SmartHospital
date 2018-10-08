@@ -1,0 +1,81 @@
+<mvc:View
+	height="100%"
+	controllerName="workflow.controller.meeting"
+	xmlns:l="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc">
+	<Page
+		class="sapUiResponsiveContentPadding login">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+				<Button press="_back" icon = "sap-icon://nav-back" />
+				</contentLeft>
+				<contentMiddle>
+				<Label text="Centralized Hospital Information Management System - Meeting Management" />
+				</contentMiddle>
+				<contentRight>
+				<Button press="_refresh" text="" icon="sap-icon://refresh" />
+				<Button press="_settings" text="" icon="sap-icon://settings" />
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<content>
+			<Table id="meetingTable"
+				inset = "false"
+				items="{path : 'meeting>/meetings',
+						sorter : {path : 'meeting>eDate'}}">
+				<headerToolbar>
+					<Toolbar>
+						<Button press="onOpenAddMeetingDialog" icon="sap-icon://add" text="Organize Meeting" id="OrganizeMeetingButton"/>
+						<Title text="Up-coming Meetings:" level="H2" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column width = "30%" hAlign="Left">
+						<Text text="Meeting Title"/>
+					</Column>
+					<Column minScreenWidth = "Tablet" demandPopin="true">
+						<Text text="Organizer"/>
+					</Column>
+					<Column minScreenWidth = "Tablet" demandPopin="true">
+						<Text text="Posted By:"/>
+					</Column>
+					<Column minScreenWidth="Tablet" demandPopin="true" hAlign="Right">
+						<Text text="Date of Event"/>
+					</Column>
+					<Column demandPopin="true" hAlign="Center">
+						<Text text="Will Attend?" />
+					</Column>
+					<Column demandPopin="true" hAlign="Center">
+						<Text text="Priority" />
+					</Column>
+				</columns>
+				<ColumnListItem type="Inactive">
+					<cells>
+						<ObjectIdentifier
+							title="{meeting>title}"
+							text="{meeting>meetingId}: {meeting>details}"
+							titlePress="openMeeting"
+							titleActive="true"/>
+						<Text
+							text="{meeting>organizer}" />
+						<Text
+							text="{meeting>poster}" />
+						<Text
+							text="{meeting>eDate}" />
+						<ToggleButton icon="sap-icon://accept" press="onAccept" pressed="{meeting>willAttend}" text="{meeting>meetingId}" width="1px" id="willAttendToggle"/>
+						<ToggleButton icon="sap-icon://flag" enabled="false" type="{meeting>priority}"/>
+					</cells>
+				</ColumnListItem>
+			</Table>
+		</content>
+		<footer>
+			<Bar>
+				<contentLeft>
+					<Label text="Copyright &#169; 2016  All rights reserved." width="100%" id="__label0" textAlign="Center"/>
+				</contentLeft>
+			</Bar>
+		</footer>
+	</Page>
+</mvc:View>

@@ -1,0 +1,52 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:u="sap.ui.unified"
+		controllerName="workflow.controller.login" xmlns:html="http://www.w3.org/1999/xhtml">
+		<Page title="Centralized Hospital Information Management System - Login" class="login">
+			<content>
+				<l:VerticalLayout text-align='center' class="loginBoarder">
+					<l:content>
+						<Label text="Username" labelFor="Username" />
+						<Input type= "text" placeholder="Username" id="Username" value="{/UName}" width="250px" required=""  />
+						<Label text="Password" labelFor="Passwpord" />
+						<Input type= "Password" placeholder="Password" id="Passwpord" value="{/Password}"  width="250px" submit="onSubmit" required=""/>
+						<Label text="User Image" labelFor="PIN" />
+						
+						<l:HorizontalLayout >
+							<l:content>
+								<VBox> 
+									<Toolbar>
+										<ToggleButton icon="sap-icon://cloud" press="fna" id="icon1"/>
+										<ToggleButton icon="sap-icon://competitor" press="fnb" id="icon2"/>
+										<ToggleButton icon="sap-icon://explorer" press="fnc" id="icon3"/>
+									</Toolbar>
+									<Toolbar>
+										<ToggleButton icon="sap-icon://nutrition-activity" press="fnd" id="icon4"/>
+										<ToggleButton icon="sap-icon://puzzle" press="fne" id="icon5"/>
+										<ToggleButton icon="sap-icon://soccor" press="fnf" id="icon6"/>
+									</Toolbar>
+									<Toolbar>
+										<ToggleButton icon="sap-icon://taxi" press="fng" id="icon7"/>
+										<ToggleButton icon="sap-icon://decision" press="fnh" id="icon8"/>
+										<ToggleButton icon="sap-icon://unlocked" press="fni" id="icon9"/>
+									</Toolbar>
+								</VBox>
+							</l:content>
+						</l:HorizontalLayout>
+						<Button type= "Submit" text="Login"  press='onSubmit' width="200px"  />	
+	
+					</l:content>
+				</l:VerticalLayout>	
+				
+		</content>
+        <footer>
+            <Bar id="__bar1" enableFlexBox="false" design="Footer">
+				<contentLeft>
+					<Label text="Copyright &#169; 2016  All rights reserved. " width="100%" id="__label0" textAlign="Center"/>
+				</contentLeft>
+            </Bar>
+        </footer>
+			
+
+	</Page>
+	
+</core:View>

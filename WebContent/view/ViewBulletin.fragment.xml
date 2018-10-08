@@ -1,0 +1,27 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Dialog
+		title = "Bulletin Information">
+		<l:VerticalLayout
+			class="sapUiContentPadding"
+			width="100%">
+			<l:content>
+				<Label text="Bulletin Title:" />
+				<Input type="text" value="Bulletin Title..." id="popupTitle" enabled="false"/>
+				<Label text="Bulletin Description:" />
+				<Input type="text" value="Bulletin Description..." id="popupDesc" enabled="false"/>
+				<Label text="Additional Information:" />
+				<TextArea value = "Addtitional Information" id="popupAddn" enabled="false" cols="40"/>
+				<Label text="Posted on:" id="postedOn"/>
+			</l:content>
+		</l:VerticalLayout>
+		<beginButton>
+	         <Button
+	         	type="Submit"
+	            text="Close"
+	            press="onCloseNoticePopupSubmit"/>
+      	</beginButton>
+	</Dialog>
+</core:FragmentDefinition>

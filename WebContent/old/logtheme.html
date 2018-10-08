@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>CIMS Authentication</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="css/logtheme.css" rel="stylesheet" />
+    <link href="./css/google.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="./js/logform.js"></script>
+</head>
+<body class="eternity-form">
+    <nav class="main-nav">
+        <ul>
+            
+            <li><a href="#demo1" class="active" data-title="Registration Form" data-panel="first"></a></li>
+	    <li><a href="#demo2"  data-title="Login Form" data-panel="second"></a></li>
+            <li><a href="#demo3" data-title="Forgot Password Form" data-panel="third"></a></li>
+        </ul>
+    </nav>
+
+
+
+
+
+
+	 <section class="colorBg2 colorBg" id="demo1" data-panel="first">
+            <div class=" container">
+       	     <br />
+            <br />
+            <!-- #region Registration Form -->
+            <div class="registration-form-section">
+                <form>
+                    <div class="section-title reg-header" data-animation="fadeInDown">
+                        <h3>Get your Account Here </h3>
+
+                    </div>
+                    <div class="clearfix">
+                        <div class="col-sm-6 registration-left-section" data-animation="fadeInUp">
+                            <div class="reg-content">
+                                <div class="textbox-wrap">
+                                    <div class="input-group">
+                                        <span class="input-group-addon "><i class="icon-user icon-color"></i></span>
+                                        <input type="text" class="form-control " placeholder="FirstName" required="required" id="fname"/>
+                                    </div>
+                                </div>
+                                <div class="textbox-wrap">
+                                    <div class="input-group">
+                                        <span class="input-group-addon "><i class="icon-user icon-color"></i></span>
+                                        <input type="text" class="form-control " placeholder="LastName" required="required" id="lname" />
+                                    </div>
+                                </div>
+                                <div class="textbox-wrap">
+                                    <div class="input-group">
+                                        <span class="input-group-addon "><i class="icon-envelope icon-color"></i></span>
+                                        <input type="email" class="form-control " placeholder="Email Id" required="required" id="email"/>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6 registration-right-section " data-animation="fadeInUp">
+                            <div class="reg-content">
+                                <div class="textbox-wrap">
+                                    <div class="input-group">
+                                        <span class="input-group-addon "><i class="icon-user icon-color"></i></span>
+                                        <input type="text" class="form-control " placeholder="UserName" required="required" id="userName"/>
+                                    </div>
+                                </div>
+                                <div class="textbox-wrap">
+                                    <div class="input-group">
+                                        <span class="input-group-addon "><i class="icon-key icon-color"></i></span>
+                                        <input type="password" class="form-control " placeholder="Password" required="required" id="password"/>
+                                    </div>
+                                </div>
+                                <div class="textbox-wrap">
+                                    <div class="input-group">
+                                        <span class="input-group-addon "><i class="icon-key icon-color"></i></span>
+                                        <input type="password" class="form-control " placeholder="Confirm-Password" required="required" />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="registration-form-action clearfix " data-animation="fadeInUp" data-animation-delay=".15s">
+                        <a href="#demo2" class="btn btn-success pull-left blue-btn ">
+                            <i class="icon-chevron-left"></i>&nbsp; &nbsp;Back To Login  
+                        </a>
+                        <button type="button" class="btn btn-success pull-right green-btn " onclick="register();">Register Now &nbsp; <i class="icon-chevron-right"></i></button>
+
+                    </div>
+                </form>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+   
+    <section class="colorBg1 colorBg" id="demo2" data-panel="second">
+
+        <div class=" container">
+
+            <div class="login-form-section">
+                <div class="login-content " data-animation="bounceIn">
+                    <form>
+                        <div class="section-title">
+                            <h3>LogIn to your Account</h3>
+                        </div>
+                        <div class="textbox-wrap">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="icon-user icon-color"></i></span>
+                                <input type="text" required="required" class="form-control" placeholder="Username" />
+                            </div>
+                        </div>
+                        <div class="textbox-wrap">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="icon-key icon-color"></i></span>
+                                <input type="password" required="required" class="form-control " placeholder="Password" />
+                            </div>
+                        </div>
+                        <div class="login-form-action clearfix">
+                            <div class="checkbox pull-left">
+                                <div class="custom-checkbox">
+                                    <input type="checkbox" checked name="iCheck">
+                                </div>
+                                <span class="checkbox-text pull-left">&nbsp;Remember Me</span>
+                            </div>
+                            <button type="submit" class="btn btn-success pull-right green-btn">LogIn &nbsp; <i class="icon-chevron-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+                <div class="login-form-links link1 " data-animation="fadeInLeftBig" data-animation-delay=".2s">
+                    <h4 class="blue">Don't have an Account?</h4>
+                    <span>No need to worry</span>
+                    <a href="#demo1" class="blue">Click Here</a>
+                    <span>to Register</span>
+                </div>
+                <div class="login-form-links link2 " data-animation="fadeInRightBig" data-animation-delay=".4s">
+                    <h4 class="green">Forgot your Password?</h4>
+                    <span>Don't worry</span>
+                    <a href="#demo3" class="green">Click Here</a>
+                    <span>to Get New One</span>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+   
+   
+
+
+
+
+   
+    <section class="colorBg3 colorBg" id="demo3" data-panel="third">
+        <div class=" container">
+            <br />
+            <br />
+            <br />
+
+            <div class="forgot-password-section" data-animation="bounceInLeft">
+                <div class="section-title">
+                    <h3>Forget Password</h3>
+                </div>
+                <div class="forgot-content">
+                    <form>
+                        <div class="textbox-wrap">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="icon-user icon-color"></i></span>
+                                <input type="text" class="form-control " placeholder="Username" required="required" />
+                            </div>
+                        </div>
+                        <div class="textbox-wrap">
+                            <div class="input-group">
+                                <span class="input-group-addon "><i class="icon-envelope icon-color"></i></span>
+                                <input type="email" class="form-control " placeholder="Email Id" required="required" />
+                            </div>
+                        </div>
+                        <div class="forget-form-action clearfix">
+                            <a class="btn btn-success pull-left blue-btn" href="#demo2"><i class="icon-chevron-left"></i>&nbsp;&nbsp;Back  </a>
+                            <button type="submit" class="btn btn-success pull-right green-btn">Submit &nbsp;&nbsp; <i class="icon-chevron-right"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+</body>
+</html>

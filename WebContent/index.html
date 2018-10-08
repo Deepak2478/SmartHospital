@@ -1,0 +1,77 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+
+		<title>Hospital Information Management System</title>
+
+		
+		<script id="sap-ui-bootstrap"
+			src="https://openui5.hana.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-compatVersion="edge"
+			data-sap-ui-preload="async"
+			data-sap-ui-resourceroots='{"workflow": "./"}'>
+		</script>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+		<style>
+			.login{
+				background:url(./theme/ocean-hd-widescreen-wallpaper-1.jpg);
+			    background-size: cover;
+			}
+			.tileClass{
+			    border-color: darkolivegreen;
+	    		border-width: 3px;
+	    		border-style: groove;
+			}
+			.loginBoarder{		    
+				padding: 50px;
+			    border: #007cc0;
+			    border-width: 2px;
+			    border-style: groove;
+			    border-radius: 40px;
+				background: url(./theme/rain.jpg);
+			    background-size: cover;
+		   	}
+		   	.whiteBack{
+		   		background: url(./theme/rain.jpg);
+		   		background-size: cover;
+		   		padding: 50px;
+		   		border: #007cc0;
+		   		border-width: 2px;
+			    border-style: groove;
+			    border-radius: 40px;
+			    background-size: cover;
+		   		
+		   	}
+		   	.whiteBg{
+		   		background-color: rgba(255,255,255,0.7);
+		   	}
+		</style>
+		<style type="text/css">
+			body {
+    			overflow-y:hidden;
+			 }
+		</style>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "workflow"
+					})
+				}).placeAt("content");
+			});
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>

@@ -1,0 +1,44 @@
+<core:FragmentDefinition
+	xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core"
+	xmlns="sap.m">
+	<Dialog
+		title = "Add Department">
+		<l:VerticalLayout
+			class="sapUiContentPadding"
+			width="100%">
+			<l:content>
+				<Label text="To:" />
+				<ComboBox 
+					selectionChange = "onRecipientSelectionChange"
+					items="{
+						path: 'users>/userNames',
+						sorter: { path: 'users>username' }
+					}" >
+					<core:Item key="{users>username}" text="{users>username}" id="comboMessage" value="{users>username}">
+					</core:Item>
+				</ComboBox>
+				<Label text="Subject:" />
+				<Input
+					type="text"
+					placeholder="Enter Message Subject..." id = "subjectMessage"/>
+				<Label text="Message:" />
+				<Input
+					type="text"
+					placeholder="Type the message..." id="messageMessage" required=""/>				
+			</l:content>
+		</l:VerticalLayout>
+		<beginButton>
+	         <Button
+	         	type="Submit"
+	            text="Send Message"
+	            press="onAddMessageSubmit"/>
+      	</beginButton>
+      	<endButton>
+      		<Button
+      			text="Cancel"
+      			press = "onCloseAddMessageDialog"/>
+      	</endButton>
+	</Dialog>
+
+</core:FragmentDefinition>

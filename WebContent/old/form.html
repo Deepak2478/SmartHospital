@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script type="text/javascript">
+function request(){
+var xhr = new XMLHttpRequest();
+var url = "./webapi/profiles";
+var data = {};
+
+data["address"]=document.getElementById("address").value;
+data["contact"]=document.getElementById("contact").value;
+data["dateOfJoining"]=document.getElementById("dateOfJoining").value+"T00:00:00";
+data["department"]=document.getElementById("department").value;
+data["designation"]=document.getElementById("designation").value;
+data["employeeName"]=document.getElementById("employeeName").value;
+data["profileUri"]=document.getElementById("profileUri").value;
+
+xhr.open("POST",url,true);
+xhr.setRequestHeader("Content-Type", "application/json");
+console.log(JSON.stringify(data));
+xhr.send(JSON.stringify(data));
+
+xhr.onloadend = function(){};
+}
+</script>
+<title>Profile Data Insertion Form</title>
+</head>
+<body>
+<form>
+address<input type = "text" id="address"><br>
+contact<input type = "number" id="contact"><br>
+date<input type = "date" id="dateOfJoining"><br>
+department<input type = "text" id="department"><br>
+design<input type = "text" id="designation"><br>
+name<input type = "text" id="employeeName"><br>
+file<input type = "file" id="profileUri"><br>
+<button type="button" onclick = "request()">Submit</button>
+</form>
+</body>
+</html>

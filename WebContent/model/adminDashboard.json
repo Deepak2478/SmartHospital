@@ -1,0 +1,76 @@
+{
+	"TileCollection" : [
+		{
+			"id-title" : "tile1",
+			"icon" : "activity-individual",
+			"number" : "",
+			"title" : "Patient Management",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile2",
+			"icon" : "task",
+			"number" : "",
+			"title" : "Bulletins",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile3",
+			"icon" : "manager",
+			"number" : "",
+			"title" : "Upcoming Meetings",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile4",
+			"icon" : "comment",
+			"number" : "",
+			"title" : "Text Management",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile5",
+			"icon" : "addresses",
+			"number" : "",
+			"title" : "Department",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile6",
+			"icon" : "add-contact",
+			"number" : "",
+			"title" : "Add Users",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile7",
+			"icon" : "delete",
+			"number" : "",
+			"title" : "Delete Users",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile8",
+			"icon" : "add-product",
+			"number" : "",
+			"title" : "Add Departments",
+			"info" : "",
+			"infoState" : "Success"
+		},
+		{
+			"id-title" : "tile9",
+			"icon" : "add-photo",
+			"number" : "",
+			"title" : "Add Departmental Icons",
+			"info" : "",
+			"infoState" : "Success"
+		}
+	]
+}
